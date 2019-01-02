@@ -4,7 +4,7 @@ function compare(text,pattern){
     var plen = pattern.length;
     var i=j=0;
     var counter=0;
-    if(text.charAt(i)==text.charAt(j)
+    if(text.charAt(i)==pattern.charAt(j)
     && text.charAt(i+plen-1) == pattern.charAt(plen-1)){
         match=true;
         for(var x=i+1;x<(plen-1);x++){
