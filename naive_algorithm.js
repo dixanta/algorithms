@@ -1,3 +1,9 @@
+/**
+ * Naive string pattern matching algorithm
+ * Written By: Dixanta Bahadur Shrestha
+ * Creators Institute of Business & Technology
+ */
+
 var txt="abcabcdcabcabababaabc";
 var pat="abc";
 
