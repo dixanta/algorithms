@@ -1,3 +1,9 @@
+/**
+ * Directory Walk Recursive Algorithm
+ * Written By: Dixanta Bahadur Shrestha
+ * Creators Institute of Business & Technology
+ * Software Engineering in Java
+ */
 import java.io.File;
 
 public class DirectoryHelper{
@@ -10,7 +16,9 @@ public class DirectoryHelper{
             try{
             for(File f:file.listFiles()){
                 String dir=f.getAbsolutePath();
-                if(dir.endsWith(fileType)){
+                if(fileType!="" && dir.endsWith(fileType)){
+                    System.out.println(dir);
+                }else{
                     System.out.println(dir);
                 }
                 if(f.isDirectory()){
