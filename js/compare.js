@@ -1,3 +1,8 @@
+/*
+ Array Algorithms for String Comparision
+ Written By: Dixanta Bahadur Shrestha
+ Creators Institute of Business & Technology
+*/
 function compareFirst(string1,string2){
     console.log("comparing %s & %s",string1,string2);
     if(string1.length==string2.length
