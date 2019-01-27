@@ -1,3 +1,8 @@
+/**
+* Screen Capture Java Program
+* Written By: Dixanta Bahadur Shrestha
+* Creators Institute of Business & Technology, Nepal
+**/
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
