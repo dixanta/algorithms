@@ -1,6 +1,7 @@
-#Algorithm Designed By Dixanta Bahadur Shrestha
-#Creators Institute of Business & Technology [CIBT]
-#Purnachandi Marg, Lalitpur, Nepal
+# Algorithm Designed By Dixanta Bahadur Shrestha
+# Creators Institute of Business & Technology [CIBT]
+# https://creators.institute
+# Purnachandi Marg, Lalitpur, Nepal
 
 numbers=[
     'Zero','One','Two','Three','Four','Five',
