@@ -1,0 +1,70 @@
+<!--
+    Project: Ball Moving
+    Author: Dixanta Bahadur Shrestha
+    Language: Javascript
+    Organization: Creators Institute of Business & Technology
+    Address: Kumaripati, Lalitpur
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ball{
+            height:100px;
+            width:100px;
+            background: orange;
+            position: absolute;
+            left:0px;
+            top:10px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="ball" id="ball"></div>
+    <script>
+        var ball=document.getElementById('ball');
+
+        var ballLeft=ball.offsetLeft;
+        var ballTop=ball.offsetTop;
+        var moveLeft=true;
+        var moveBottom=true;
+        setInterval(function(){
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+            ball.innerHTML=screenWidth;
+            ball.style.top=ballTop +'px';
+            ball.style.left=ballLeft +'px';
+            
+            if(moveLeft){
+                ballLeft++;
+            }else{
+                ballLeft--;
+            }
+            if(ballLeft>=(screenWidth-ball.offsetWidth)){
+                moveLeft=false;
+            }
+            if(ballLeft <=0){
+                moveLeft=true;
+                
+            }
+            if(moveBottom){
+                ballTop++;
+            }else{
+                ballTop--;
+            }
+            if(ballTop>=(screenHeight-ball.offsetHeight)){
+                moveBottom=false;
+            }
+            if(ballTop<=0){
+                moveBottom=true;
+            }
+            
+
+        },5);
+    </script>
+</body>
+</html>
