@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ball {
+            height: 50px;
+            width: 50px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="counter" style="font-size: 16px;font-weight: bold;"></div>
+    <div id="missed" style="font-size: 16px;font-weight: bold;"></div>
+    <script>
+        var counter=document.getElementById('counter');
+        var missed=document.getElementById('missed');
+        var hits=0,miss=0;
+        var ballServed=0;
+        setInterval(function () {
+            var screenHeight=window.innerHeight;
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+            var ball = document.createElement('span');
+            ball.classList.add('ball');
+            document.body.appendChild(ball);
+            ballServed++;
+            var ballLeft = (Math.floor(Math.random() * (screenWidth-ball.offsetWidth)));
+            ball.style.left = ballLeft + 'px';
+           
+            ball.onmouseover=function(){
+                hits++;
+                counter.innerHTML=hits +' Hit' ;
+                ball.style.display='none';
+                document.body.removeChild(ball);
+                //alert('hit');
+                
+
+            }
+            var ballTop=ball.offsetTop;
+
+            ballInterval=setInterval(function(){
+                
+                ballTop = ballTop + 5;
+                ball.style.top=ballTop +'px';
+                if(ballTop >(screenHeight-ball.offsetHeight) && ball !==undefined){
+                    ball.style.display='none';
+                    miss=ballServed-hits;
+                    missed.innerHTML=miss + ' Missed';
+                }
+            },30);
+        },500);
+
+    </script>
+</body>
+
+</html>
