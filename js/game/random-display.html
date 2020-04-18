@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var text="this is a simple text animation";
+        var colors=['red','green','blue','orange','purple','lime','aqua'];
+        var i=0;
+        var screenWidth=window.innerWidth-10;
+        var screenHeight=window.innerHeight-10;
+        
+        var interval=setInterval(function(){
+            var textLeft=parseInt(Math.random()*screenWidth);
+            var textTop=parseInt(Math.random()*screenHeight);
+            
+            var span=document.createElement('span');
+            span.style.position='absolute';
+            span.style.left=textLeft+'px';
+            span.style.height='20px';
+            span.style.width='20px';
+            span.style.borderRadius='50%';
+            span.style.top=textTop+'px';
+            span.style.background=colors[i];
+            //var char=String.fromCharCode(Math.floor((Math.random()*26)+65));
+            //span.innerHTML=text.charAt(i);
+            var char='*';
+            span.innerHTML=char;
+            span.onmouseover=function(){
+                this.style.display='none';
+            }
+            document.body.appendChild(span);
+            i++;
+            if(i==colors.length){
+                i=0;
+                //clearInterval(interval);
+            }
+        },10);
+    </script>
+</body>
+</html>
