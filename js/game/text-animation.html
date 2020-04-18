@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        var text="This is a simple animation";
+        var colors=['red','green','blue','orange','pink','purple','lime'];
+        var output=document.getElementById('output');
+        var i=0,j=0;
+        var interval = setInterval(function(){
+            var char=text.charAt(i);
+            output.innerHTML +='<span style="color:'+colors[j]+'">'+char+'</span>';
+            i++;
+            j=(j==colors.length-1)?0:j+1;
+            if(i>text.length){
+                //i=0;
+                //output.innerHTML='';
+                clearInterval(interval);
+                var originalSize=fontSize = parseInt(window.getComputedStyle(output).fontSize);
+                setInterval(function(){
+                    output.style.fontSize = (++fontSize)+'px';
+                    if(fontSize==50){
+                        fontSize=originalSize;
+                    }
+                },100);
+            }
+           
+        },100);
+    </script>
+</body>
+</html>
