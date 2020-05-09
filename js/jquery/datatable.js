@@ -11,10 +11,6 @@
         var dataset = null;
         $el.html('<h1>Loading.....</h1>');
         
-        this.getRows = function () {
-            return dataset;
-        }
-
         function renderColumnHeading(columns,$thead){
             var $headingRow = $('<tr/>');
             columns.forEach(function (row, index) {
